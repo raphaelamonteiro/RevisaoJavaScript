@@ -31,10 +31,9 @@ console.log(sum);
 
 //.find()
 //Retorna o primeiro elemento que satisfaz uma condição.
-const frutas = ["maçã", "kiwi", "abacate", "uva"];
-const frutas = frutas.find((fruta) => fruta === "kiwi");
-console.log(fruta);
-//saída: "kiwi"
+const frutas = ["maçã", "kiwi", "uva"];
+const fruta = frutas.find((fruta) => fruta === "kiwi");
+console.log(fruta); // Saída: "kiwi"
 
 
 //.some() e .every()
