@@ -1,4 +1,4 @@
-//unção Tradicional
+//Função Tradicional
 //A declaração mais comum é usando function. 
 //Essa forma permite "elevar" a função para o topo do escopo (assim como ocorre com var).
 function saudacao() {
