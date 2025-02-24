@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4 - Rede de Hoteis</title>
+</head> 
+
+<body>
+    <script>
+function salarioFinal() {
+    // dados de entrada
+    const salarioMinimo = parseFloat(prompt("Informe o salário mínimo estadual: "));
+    const codigo = parseInt(prompt("Informe o código do funcionário:"));
+    const horas = parseInt(prompt("Informe o número de horas trabalhadas no mês:"));
+    const turno = prompt("Informe o turno (M - Matutino, V - Vespertino, N - Noturno)").toUpperCase();
+    const categoria = prompt("Informe a categoria (G - Gerente, F - Funcionário)").toUpperCase();
+  
+    let horaTrabalhada;
+    let salarioInicial;
+    let auxilioAlimentacao;
+    let total;
+
+    if (turno === "M" ) {
+        if(categoria === "F"){
+            horaTrabalhada = 0.01 * salarioMinimo;
+        } else if(categoria === "G"){
+            horaTrabalhada = 0.04 * salarioMinimo
+        }
+
+    } else if (turno === "V") { 
+        if(categoria === "F"){
+            horaTrabalhada = 0.01 * salarioMinimo;
+        } else if(categoria === "G"){
+            horaTrabalhada = 0.04 * salarioMinimo  
+        }
+
+    } else if(turno === "N"){
+        if(categoria === "F"){
+            horaTrabalhada = 0.02 * salarioMinimo;   
+        }
+    }
+
+    // Cálculo do salário inicial
+    salarioInicial = horaTrabalhada * horas;
+
+    if (salarioInicial <= 800){
+        auxilioAlimentacao = salarioInicial * 0.25
+    }
+    else if(salarioInicial > 800 && salarioInicial<= 1200) {
+        auxilioAlimentacao = salarioInicial * 0.20 
+    }
+    else if(salarioInicial > 1200){
+        auxilioAlimentacao = salarioInicial * 0.15
+    }
+
+    total = salarioInicial + auxilioAlimentacao;
+
+ 
+    // Exibe o resultados
+    alert("Código do Funcionário: " + codigo + " | Horas Trabalhadas: " + horas + " | Valor da hora trabalhada: R$ " + horaTrabalhada.toFixed(2) + " | Salário Inicial: R$ " + salarioInicial.toFixed(2) + " | Auxílio Alimentação: R$ " + auxilioAlimentacao.toFixed(2) + " | Salário Final: R$" + total.toFixed(2));
+}
+
+// Chama a função
+salarioFinal();
+
+    </script>
+</body>
+
+</html>

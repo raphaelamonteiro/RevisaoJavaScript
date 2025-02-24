@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3 - Transportadora</title>
+</head> 
+
+<body>
+    <script>
+// Função para calcular o frete
+function calcularFrete() {
+    // Leitura dos dados de entrada
+    const distancia = parseFloat(prompt("Informe a distância (em km):"));
+    const numPecas = parseInt(prompt("Informe a quantidade de peças:"));
+    const regiao = parseInt(prompt("Informe a região (1 - Sul, 2 - Sudeste, 3 - Centro-Oeste):"));
+    const rastreamento = prompt("Deseja rastreamento? (S - Sim, N - Não)").toUpperCase();
+
+    // Valores de frete por peça por região
+    let valorPorPeca;
+    let desconto;
+
+    if (regiao === 1) { // Sul
+        valorPorPeca = 1.00;
+        desconto = 0.10; // 10% de desconto para peças acima de 1000
+    } else if (regiao === 2) { // Sudeste
+        valorPorPeca = 1.20;
+        desconto = 0.12; // 12% de desconto para peças acima de 1000
+    } else if (regiao === 3) { // Centro-Oeste
+        valorPorPeca = 1.50;
+        desconto = 0.15; // 15% de desconto para peças acima de 1000
+    }
+
+    // Cálculo do frete pelas peças
+    let valorFretePecas = 0;
+    if (numPecas <= 1000) {
+        valorFretePecas = numPecas * valorPorPeca;
+    } else {
+        valorFretePecas = (1000 * valorPorPeca) + ((numPecas - 1000) * valorPorPeca * (1 - desconto));
+    }
+
+    // Cálculo do frete por quilômetro
+    const valorFreteKm = distancia; // 1 litro de combustível por km, portanto 1 R$ por km
+
+    // Cálculo da taxa de rastreamento
+    const taxaRastreamento = (rastreamento === "S") ? 200.00 : 0.00;
+
+    // Cálculo do total do frete
+    const totalFrete = valorFretePecas + valorFreteKm + taxaRastreamento;
+
+    // Exibição dos resultados
+    alert("Taxa do rastreamento: R$ " + taxaRastreamento.toFixed(2) + " Valor do frete pelas peças: R$ " + valorFretePecas.toFixed(2) + " Valor do frete por quilômetro: R$ " + valorFreteKm.toFixed(2) + " Total do frete: R$ " + totalFrete.toFixed(2));
+}
+
+// Chama a função para calcular o frete
+calcularFrete();
+
+    </script>
+</body>
+
+</html>

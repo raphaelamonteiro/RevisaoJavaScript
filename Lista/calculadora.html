@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5 - Soma e subtração</title>
+</head> 
+
+<body>
+    <script>
+// Função
+    // Função de soma/subtração
+    function calculo(num1, num2, operacao) {
+        if (operacao === "soma") {
+            return num1 + num2;
+        } else if (operacao === "subtração") {
+            return num1 - num2;
+        } else {
+            return "Operação inválida!";
+        }
+    }
+
+    //Entrada
+    let num1 = parseFloat(prompt("Digite o primeiro número:"));
+    let operacao = prompt("Digite a operação ('soma' ou 'subtração'):");
+    let num2 = parseFloat(prompt("Digite o segundo número:"));
+
+    // Chama a função e exibe o resultado
+    let resultado = calculo(num1, num2, operacao);
+    alert(`O resultado é: ${resultado}`);
+
+
+    </script>
+</body>
+
+</html>

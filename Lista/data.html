@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6 - Data por Extenso</title>
+</head>
+
+<body>
+    <script>
+    // Função para converter data
+    function converterDataPorExtenso(data) {
+        let meses = [
+            "janeiro", "fevereiro", "março", "abril", "maio", "junho",
+            "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"
+        ];
+
+        let partes = data.split("/");
+        if (partes.length !== 3) {
+            return "Formato de data inválido!";
+        }
+
+        let dia = partes[0];
+        let mes = meses[parseInt(partes[1]) - 1];
+        let ano = partes[2];
+
+        return `${dia} de ${mes} de ${ano}`;
+    }
+
+    // Entrada do usuário
+    let data = prompt("Digite a data no formato dd/mm/aaaa:");
+    let dataExtenso = converterDataPorExtenso(data);
+    //Saída
+    alert(dataExtenso);
+
+    </script>
+</body>
+
+</html>

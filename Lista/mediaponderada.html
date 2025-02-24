@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3 - Média Final</title>
+</head>
+
+<body>
+    <script>
+        let notaA = prompt("Digite a nota da Atividade prática em laboratório: ");
+        let notaP = prompt("Digite a nota da Prova semestral: ");
+        let notaT = prompt("Digite a nota do trabalho teórico: ");
+
+
+        let pesoA = 2;
+        let pesoP = 5;
+        let pesoT = 3;
+
+        let mediaFinal = ((pesoA * notaA) + (pesoP * notaP) + (pesoT * notaT) / (pesoA + pesoP + pesoT))
+
+        if (0 <= mediaFinal && mediaFinal < 5) {
+            classificacao = "F";
+        }
+        else if (5 <= mediaFinal && mediaFinal < 6) {
+            classificacao = "E";
+        }
+        else if (6 <= mediaFinal && mediaFinal < 7) {
+            classificacao = "D";
+        }
+        else if (7 <= mediaFinal && mediaFinal < 8) {
+            classificacao = "C";
+        }        
+        else if (7 <= mediaFinal && mediaFinal < 8) {
+            classificacao = "C";
+        }
+        else if (8 <= mediaFinal && mediaFinal < 9) {
+            classificacao = "B";
+        }  
+        else (9 <= mediaFinal && mediaFinal < 10); {
+            classificacao = "A";
+        }
+    
+        
+    alert(`A média do aluno é = ${mediaFinal}, e sua classificação é ${classificacao}.`);
+
+    </script>
+</body>
+
+</html>
